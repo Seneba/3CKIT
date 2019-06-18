@@ -11,6 +11,7 @@ The preprocessing step is divided into 3 steps to compensate, transform and norm
 ![3CKIT](Schemas/3ckit.preprocessing.PNG)
 ### Compensation
 Compensation corrects the effects of overlapping emission spectra of fluorescent antibody markers. (See Figure 10)
+![3CKIT](Schemas/Compensation.PNG)
 
 ### Transformation
 Data transformation is essential for visualization and data modeling. The main transformations commonly used in cytometric analysis are arcsinh, cytoasinh and logicle. (See Figure 11)
