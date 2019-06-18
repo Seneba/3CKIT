@@ -44,6 +44,5 @@ Once the markers are chosen, the interface proposes the choice of clustering amo
 Then, the interface proposes the choice of the methods allowing to visualize and reduce the data of big dimension, to present the types of cells marked with a specific color, thanks to a linear transformation such as PCA or a nonlinear reduction such as the t-SNE. (See figure 16)
 ![3CKIT](Schemas/Dimensionality.Reduction.Methods.PNG)
 All these parameters chosen, the user can finally start the calculations. For this purpose the application generates a directly executable R script which then allows to launch Cytofkit for data exploration and interpretation.
-
-
+![3CKIT](Schemas/Cellular.Progression.Method.PNG)
 
