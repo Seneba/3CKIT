@@ -4,21 +4,24 @@ The 3CKIT is a shiny interface for performing pre-processing of FCS data, their 
 
 ![3CKIT](Schemas/3ckit.PNG)
 
-## Pre-processing 
+the 3ckit tool begin by importing FCS FILES to be analyzed 
+![3CKIT](Schemas/Preprocessing1.PNG)
 
-The preprocessing step is divided into 3 steps to compensate, transform and normalize the FCS data
+Once this data is imported, more steps are needed to have clustered data
+## 1 Pre-processing 
 
+he preprocessing step is divided into 3 steps to compensate, transform and normalize the FCS data
 ![3CKIT](Schemas/Preprocessing.PNG)
-### Compensation
+### 1a Compensation
 Compensation corrects the effects of overlapping emission spectra of fluorescent antibody markers. (See Figure 10)
 ![3CKIT](Schemas/Compensation.PNG)
 
-### Transformation
+### 1b Transformation
 Data transformation is essential for visualization and data modeling. The main transformations commonly used in cytometric analysis are arcsinh, cytoasinh and logicle. (See Figure 11)
 ![3CKIT](Schemas/logicle.transformation.PNG)
 In these formulas, x corresponds to the variable to be transformed (the expression of the markers of each cell), the values ​​a, b, c, e, m, p, w and T are parameters affecting the transformation function. All these transformations are implemented in R especially with the Flowcore package
 
-### Normalization
+### 1c Normalization
 
 In order to avoid contamination of sorting by undesired cells and to ensure the reliability of the results of cell cycle measurements, it is important not to take into account cell aggregates during cell sorting in cytometry. The method used is based on the possibility of analyzing the profile of the signal collected, its area, its height or its passage time (flight time, time of flight, TOF, width depending on the machine). By using combinations of these parameters, it is possible to
 distinguish doublets singlets. The methods used differ according to the type of cytometric data (flow cytometry or mass).
@@ -26,11 +29,11 @@ For flow cytometry, the flowAI package is used. It proceeds by the use of algori
 For each analyzed file, the application generates a summary of the quality assessment from the steps mentioned. (See Figure 12) For mass cytometry data, the CATALYST [25] package is used. CATALYST is a pipeline that includes standardization using ball standards and unicellular deconvolution. It offers an implementation of the
 ball-based normalization. The identification of singlets (used for normalization) as well as cell doublets (to be deleted) is automated [25] (see Figure 12).
 
-## Quality control
+## 2 Quality control
 
 Quality control allows you to view markers independently and in co-expression as a correlation matrix in order to have an overview of the dataset before any analysis. The QC also makes it possible to compare the data before and after normalization and gives additional information on data acquisition 
 
-## Cytofkit Interface
+## 3 Cytofkit Interface
 
 The configuration interface of the cytofkit calculations (clustering, dimension reduction) makes it possible to choose appropriate parameters for each data set. First, the interface is used to set the pre-processing of the data and to combine several FCS files before the analysis. (See Figure 14)
 Secondly, it is important to choose the markers. In cytometry, the parameters used to make the clustering correspond to the markers of the cells. But not all markers are used for this purpose. The data are generally clustered using phenotypic markers and visualization is done on phenotypic and functional markers. (see figure below)
