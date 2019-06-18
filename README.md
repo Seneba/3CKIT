@@ -2,4 +2,4 @@
 
 The 3CKIT is a shiny interface for performing pre-processing of FCS data, their quality control and serving as a new input interface to the Cytofkit Tool used for clustering and visualization of data clustering
 
-![Schemas](3ckit.png)
+![Schemas](3ckit.PNG)
