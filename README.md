@@ -8,7 +8,7 @@ The 3CKIT is a shiny interface for performing pre-processing of FCS data, their 
 
 The preprocessing step is divided into 3 steps to compensate, transform and normalize the FCS data
 
-![3CKIT](Schemas/3ckit.preprocessing.PNG)
+![3CKIT](Schemas/Preprocessing.PNG)
 ### Compensation
 Compensation corrects the effects of overlapping emission spectra of fluorescent antibody markers. (See Figure 10)
 ![3CKIT](Schemas/Compensation.PNG)
@@ -37,6 +37,10 @@ Secondly, it is important to choose the markers. In cytometry, the parameters us
 ![3CKIT](Schemas/Markers.selection.PNG)
 
 Once the markers are chosen, the interface proposes the choice of clustering among the DensVM, FlowSOM, PhenoGraph and ClusterX methods that allow automatic detection of cell subpopulations. (see figure below)
+![3CKIT](Schemas/Clustering.Methods.PNG)
 Then, the interface proposes the choice of the methods allowing to visualize and reduce the data of big dimension, to present the types of cells marked with a specific color, thanks to a linear transformation such as PCA or a nonlinear reduction such as the t-SNE. (See figure 16)
+![3CKIT](Schemas/Dimensionality.Reduction.Methods.PNG)
 All these parameters chosen, the user can finally start the calculations. For this purpose the application generates a directly executable R script which then allows to launch Cytofkit for data exploration and interpretation.
+
+
 
