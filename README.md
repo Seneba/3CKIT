@@ -8,7 +8,7 @@ The 3CKIT is a shiny interface for performing pre-processing of FCS data, their 
 
 The preprocessing step is divided into 3 steps to compensate, transform and normalize the FCS data
 
-![3CKIT](Schemas/3ckit.preprocessing.PNG)
+![3CKIT](Schemas/3ckit.preprocessin.PNG)
 ### Compensation
 Compensation corrects the effects of overlapping emission spectra of fluorescent antibody markers. (See Figure 10)
 
