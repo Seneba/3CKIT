@@ -19,12 +19,11 @@ Compensation corrects the effects of overlapping emission spectra of fluorescent
 ### 1b Transformation
 Data transformation is essential for visualization and data modeling. The main transformations commonly used in cytometric analysis are arcsinh, cytoasinh and logicle. (See Figure below)
 ![3CKIT](Schemas/logicle.transformation.PNG)
-In these formulas, x corresponds to the variable to be transformed (the expression of the markers of each cell), the values ​​a, b, c, e, m, p, w and T are parameters affecting the transformation function. All these transformations are implemented in R especially with the Flowcore package
+In these formulas, x corresponds to the variable to be transformed (the expression of the markers of each cell), the values **a, b, c, e, m, p, w and T are parameters affecting the transformation function. All these transformations are implemented in R especially with the Flowcore package
 
 ### 1c Normalization
 
-In order to avoid contamination of sorting by undesired cells and to ensure the reliability of the results of cell cycle measurements, it is important not to take into account cell aggregates during cell sorting in cytometry. The method used is based on the possibility of analyzing the profile of the signal collected, its area, its height or its passage time (flight time, time of flight, TOF, width depending on the machine). By using combinations of these parameters, it is possible to
-distinguish doublets singlets. The methods used differ according to the type of cytometric data (flow cytometry or mass).
+In order to avoid contamination of sorting by undesired cells and to ensure the reliability of the results of cell cycle measurements, it is important not to take into account cell aggregates during cell sorting in cytometry. The method used is based on the possibility of analyzing the profile of the signal collected, its area, its height or its passage time (flight time, time of flight, TOF, width depending on the machine). By using combinations of these parameters, it is possible to distinguish doublets singlets. The methods used differ according to the type of cytometric data (flow cytometry or mass).
 For flow cytometry, the flowAI package is used. It proceeds by the use of algorithms for the detection of anomalies. The general approach underlying this method consists of three main steps to verify and eliminate anomalies resulting from abrupt changes in flow rate, instability of signal acquisition, and outliers in events (cells).
 For each analyzed file, the application generates a summary of the quality assessment from the steps mentioned. 
 For mass cytometry data, the CATALYST package is used. CATALYST is a pipeline that includes standardization using ball standards and unicellular deconvolution.It offers an implementation of ball-based normalization. The identification of singlets (used for normalization) as well as cell doublets (to be deleted) is automated.
@@ -39,7 +38,7 @@ Secondly, it is important to choose the markers. In cytometry, the parameters us
 ![3CKIT](Schemas/Markers.selection.PNG)
 
 Once the markers are chosen, the interface proposes the choice of clustering among the DensVM, FlowSOM, PhenoGraph and ClusterX methods that allow automatic detection of cell subpopulations. (see figure below)
-![3CKIT](Schemas/Clustering.Methods.PNG)
+![3CKIT](Schemas/Clustering.Methods.PNG).
 Then, the interface proposes the choice of the methods allowing to visualize and reduce the data of big dimension, to present the types of cells marked with a specific color, thanks to a linear transformation such as PCA or a nonlinear reduction such as the t-SNE. (See figure 16)
 ![3CKIT](Schemas/Dimensionality.Reduction.Methods.PNG)
 All these parameters chosen, the user can finally start the calculations. For this purpose the application generates a directly executable R script which then allows to launch Cytofkit for data exploration and interpretation.
